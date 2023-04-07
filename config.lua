@@ -11,9 +11,7 @@ Shop = {
         {category = "↓ ~b~ Boisson ~s~↓"},
         {Name = "Eau", ItemName = "water", Quantity = 1, Price = 2},
         {category = "↓ ~r~ Divers ~s~↓"},
-        {Name = "Canne à pêche", ItemName = "fishingrod", Quantity = 1, Price = 300},
-        {Name = "GPS", ItemName = "gps", Quantity = 1, Price = 400},
-        {Name = "Boombox", ItemName = "boombox", Quantity = 1, Price = 500},
+        {Name = "Canne à pêche", ItemName = "fishingrod", Quantity = 1, Price = 300}
     }
 }
 
