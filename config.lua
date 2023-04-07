@@ -1,5 +1,5 @@
 Shop = {
-    Production = false,
+    Production = true,
     StopPrint = true,
     Prefix = "(^4Shop-Fivem^7)",
     PosShop = {
