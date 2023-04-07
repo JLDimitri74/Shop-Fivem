@@ -70,7 +70,7 @@ local OpenShop = function(key)
                 RageUI.ButtonWithStyle("Procéder au ~g~paiement", nil, { RightLabel = "→→" }, true, function(_, _, s)
                     if s then
                         -- Todo --> pay in cash by bank
-                        if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] preparing to send\n",json.encode(basket)) end
+                        if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Preparing to send",json.encode(basket)) end
                         TriggerServerEvent("Dimitri74:send:payment",tonumber(key), basket)
                         if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Payment trigger send") end
                     end
@@ -109,9 +109,22 @@ Citizen.CreateThread(function()
     end
 end)
 
-function DisplayHelpText(str)
+DisplayHelpText = function(str)
     if str == nil then if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^1ERROR^7] (^3DisplayHelpText^7) Not defined") Shop.StopPrint = false OpenMenu = false end return end
     SetTextComponentFormat("STRING")
     AddTextComponentString(str)
     DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 end
+
+ShowNotification = function(msg)
+    if msg == nil then if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^1ERROR^7] (^3ShowNotification^7) Not defined") Shop.StopPrint = false OpenMenu = false end return end
+	SetNotificationTextEntry('STRING')
+	AddTextComponentSubstringPlayerName(msg)
+	DrawNotification(false, true)
+end
+
+RegisterNetEvent("Dimitri74:ShowNotification")
+AddEventHandler("Dimitri74:ShowNotification", function(msg)
+    if msg == nil then if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^1ERROR^7] (^3Dimitri74:ShowNotification^7) Not defined") Shop.StopPrint = false OpenMenu = false end return end
+    ShowNotification(msg)
+end)
