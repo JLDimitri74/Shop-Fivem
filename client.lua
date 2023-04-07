@@ -22,7 +22,7 @@ local OpenShop = function(key)
     end
 
     RageUI.Visible(RMenu:Get('Shop', 'main'), true)
-    if not RageUI.Visible(RMenu:Get('Shop', 'main')) or assert(type(RageUI.Visible(RMenu:Get('Shop', 'main')))) ~= "boolean" then if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^1ERROR^7] (^3RageUI.Visible^7) RageUI.Visible request failed") Shop.StopPrint = false end OpenMenu = false return else print(""..Shop.Prefix.." [^2Info^7] RageUI.Visible request completed successfully") end
+    if not RageUI.Visible(RMenu:Get('Shop', 'main')) or assert(type(RageUI.Visible(RMenu:Get('Shop', 'main')))) ~= "boolean" then if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^1ERROR^7] (^3RageUI.Visible^7) RageUI.Visible request failed") Shop.StopPrint = false end OpenMenu = false return else if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] RageUI.Visible request completed successfully") end end
     Citizen.CreateThread(function()
         while OpenMenu do
             local Player = PlayerPedId()

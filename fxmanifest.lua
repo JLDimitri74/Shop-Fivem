@@ -25,5 +25,5 @@ client_script {
 
 server_script {'server.lua'}
 
-dependencies {'es_extended'}
+dependencies {'av_inventory'}
 
