@@ -7,11 +7,7 @@ Shop = {
     },
     LTD = {
         {category = "↓ ~y~ Nourriture ~s~↓"},
-        {Name = "Pain", ItemName = "bread", Quantity = 1, Price = 3},
-        {category = "↓ ~b~ Boisson ~s~↓"},
-        {Name = "Eau", ItemName = "water", Quantity = 1, Price = 2},
-        {category = "↓ ~r~ Divers ~s~↓"},
-        {Name = "Canne à pêche", ItemName = "fishingrod", Quantity = 1, Price = 300}
+        ["bread"] = {Name = "Pain", Price = 3},
     }
 }
 

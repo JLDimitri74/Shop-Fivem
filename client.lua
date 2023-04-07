@@ -49,10 +49,10 @@ local OpenShop = function(key)
                         if s then
                             if not basket[k] then
                                 basket[k] = 1
-                                if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Basket initialization for the item [^5"..v.ItemName.."^7]") end
+                                if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Basket initialization for the item [^5"..k.."^7]") end
                             else
                                 basket[k] = basket[k] + 1
-                                if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Add item [^5"..v.ItemName.."^7] x [^2"..basket[k].."^7] to cart") end
+                                if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Add item [^5"..k.."^7] x [^2"..basket[k].."^7] to cart") end
                             end
                         end
                     end)
@@ -70,6 +70,7 @@ local OpenShop = function(key)
                 RageUI.ButtonWithStyle("Procéder au ~g~paiement", nil, { RightLabel = "→→" }, true, function(_, _, s)
                     if s then
                         -- Todo --> pay in cash by bank
+                        if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] preparing to send\n",json.encode(basket)) end
                         TriggerServerEvent("Dimitri74:send:payment",tonumber(key), basket)
                         if not Shop.Production and Shop.StopPrint then print(""..Shop.Prefix.." [^2Info^7] Payment trigger send") end
                     end
