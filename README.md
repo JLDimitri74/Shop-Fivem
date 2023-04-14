@@ -1,3 +1,3 @@
 # Shop-Fivem
 
-Support Discord: JLDimitri74#2484
+No help will be given
